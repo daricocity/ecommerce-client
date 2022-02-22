@@ -46,7 +46,7 @@ const Products = ({cat, filters, sort, productsHome}) => {
     useEffect(() => {
         const getProducts = async () => {
             try {
-                const res = await publicRequest.get(cat ? `/products?categories=${cat}` : '/products');
+                const res = await publicRequest.get(cat ? `products?categories=${cat}` : 'products');
                 console.log('This is the products: ')
                 console.log(res)
                 setProducts(res.data)
