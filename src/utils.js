@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect } from 'react';
 
-const BASE_URL = 'https://ecomma-api.herokuapp.com/api/';
+const BASE_URL = 'https://ecomma-api.herokuapp.com/api';
 
 const TOKEN = () => {
     if(JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.accessToken){
