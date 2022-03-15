@@ -1,5 +1,5 @@
 import { publicRequest } from './utils';
-import { loginStart, loginSuccess, loginFailure } from './redux/userRedux';
+import { loginStart, loginSuccess, loginFailure, logoutSuccess } from './redux/userRedux';
 
 export const login = async (dispatch, user) => {
     dispatch(loginStart());
@@ -11,7 +11,7 @@ export const login = async (dispatch, user) => {
     }
 };
 
-export const logout = () => {
-    localStorage.removeItem('persist:root')
+export const logout = (dispatch) => {
+    dispatch(logoutSuccess());
     window.location.href = "/login"
 }

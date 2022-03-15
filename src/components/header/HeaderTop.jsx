@@ -2,7 +2,7 @@ import { lg } from '../../responsive';
 import {Link} from 'react-router-dom';
 import { logout } from '../../apiCall';
 import styled from "styled-components";
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 const Headertop = styled.div`
     display: -webkit-box;
@@ -80,6 +80,7 @@ const Linked = styled(Link)`
 `;
 
 const HeaderTop = () => {
+    const dispatch = useDispatch();
     const user = useSelector(state => state.user);
     return (
         <Headertop>
@@ -91,7 +92,7 @@ const HeaderTop = () => {
                     {user.currentUser ? (
                         <>
                         <Linked to='#'><Item type="show">My Account</Item></Linked>
-                        <Linked to='#' onClick={() => logout()}><Item type="show">Logout</Item></Linked>
+                        <Linked to='#' onClick={() => logout(dispatch)}><Item type="show">Logout</Item></Linked>
                         </>
                     ) : (
                         <>

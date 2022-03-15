@@ -47,7 +47,6 @@ const Products = ({cat, filters, sort, productsHome}) => {
         const getProducts = async () => {
             try {
                 const res = await publicRequest.get(cat ? `/products?categories=${cat}` : '/products');
-                console.log(res)
                 setProducts(res.data)
             } catch (err) {
                 console.log(err)
